@@ -1,0 +1,51 @@
+<div class="container mt-5 pt-5">
+    <div class="row justify-content-center">
+    
+
+        <div class="col-12 col-xl-6 col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    Lista de tareas
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="this.formProducto">
+
+                        <div class="input-group mb-3">
+                            <input type="text" placeholder="Ingresar producto" class="form-control" formControlName="nombre">
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <input type="number" placeholder="Ingresar precio" class="form-control" formControlName="precio">
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <input type="file" accept="image/*" (change)="onFileSelected($event)" class="form-control" formControlName="imagen">
+                        </div>
+
+
+                        <button class="btn-primary" (click)="this.addProducto()" type="button" [disabled]="!this.formProducto.valid">Agregar</button>
+
+                    </form>
+
+
+                    <ul class="list-group">
+                        <li class="list-group-item" *ngFor="let producto of this.listProductos">
+
+                            <div class="d-flex justify-content-between">
+                                <label for="">{{producto.nombre}}</label>
+                                <label for="">{{producto.precio}}</label>
+                                <label for="">{{producto.path}}</label>
+                             
+                            </div>
+                            <button class="btn-danger" (click)="this.deleteProducto(producto)">Eliminar</button>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

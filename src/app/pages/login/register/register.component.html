@@ -1,0 +1,103 @@
+
+<main class="form-signin" [formGroup]="this.registerForm" (ngSubmit)="onSubmit()">
+  <form>
+
+
+    <h1 class="h3 mb-3 fw-normal">Registrar</h1>
+
+    <div class="form-floating">
+        <input type="text" class="form-control" formControlName="name" placeholder="name@example.com">
+        <label for="floatingInput">Ingrese nombre</label>
+    </div>
+    <div *ngIf="registerForm.get('name')?.invalid && (registerForm.get('name')?.dirty || registerForm.get('name')?.touched)">
+        <div *ngIf="registerForm.get('name')?.errors?.['required']">
+        El nombre es requerido.
+        </div>
+    </div>
+
+    <div class="form-floating">
+        <input type="text" class="form-control" formControlName="surName" placeholder="name@example.com">
+        <label for="floatingInput">Ingrese apellido</label>
+    </div>
+    <div *ngIf="registerForm.get('surName')?.invalid && (registerForm.get('surName')?.dirty || registerForm.get('surName')?.touched)">
+        <div *ngIf="registerForm.get('surName')?.errors?.['required']">
+        El apellido es requerido.
+        </div>
+    </div>
+
+    
+    <div class="form-floating">
+        <input type="text" class="form-control" formControlName="dni" placeholder="name@example.com">
+        <label for="floatingInput">Ingrese DNI</label>
+    </div>
+    <div *ngIf="registerForm.get('dni')?.invalid && (registerForm.get('dni')?.dirty || registerForm.get('dni')?.touched)">
+        <div *ngIf="registerForm.get('dni')?.errors?.['required']">
+        El DNI es requerido.
+        </div>
+    </div>
+
+        
+    <div class="form-floating">
+        <input type="number" class="form-control" formControlName="age" placeholder="name@example.com">
+        <label for="floatingInput">Ingrese edad</label>
+    </div>
+    <div *ngIf="registerForm.get('age')?.invalid && (registerForm.get('age')?.dirty || registerForm.get('age')?.touched)">
+        <div *ngIf="registerForm.get('age')?.errors?.['required']">
+        La edad es requerida.
+        </div>
+    </div>
+
+    <div class="form-floating">
+        <input type="text" class="form-control" formControlName="city" placeholder="name@example.com">
+        <label for="floatingInput">Ingrese ciudad</label>
+    </div>
+
+    <div class="form-floating">
+        <input type="text" class="form-control" formControlName="city" placeholder="name@example.com">
+        <label for="floatingInput">Ingrese pais</label>
+    </div>
+
+    <div class="form-floating">
+
+        <input type="file" id="path" formControlName="path" accept="image/*">
+       
+    </div>
+   
+
+    <div class="form-floating">
+      <input type="email" class="form-control" formControlName="email" placeholder="name@example.com">
+      <label for="floatingInput">Ingrese email</label>
+    </div>
+    <div *ngIf="registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)">
+      <div *ngIf="registerForm.get('email')?.errors?.['required']">El email es requerido.</div>
+      <div *ngIf="registerForm.get('email')?.errors?.['email']">El email no es válido.</div>
+    </div>
+    <div class="form-floating mt-2">
+      <input type="password" class="form-control" formControlName="password" placeholder="Password">
+      <label for="floatingPassword">Ingrese contraseña</label>
+    </div>
+    <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('email')?.touched)">
+      <div *ngIf="registerForm.get('password')?.errors?.['required']">La contraseña es requerida.
+    </div>
+    </div>
+
+    <div class="form-floating mt-2">
+        <input type="password" class="form-control" formControlName="password" placeholder="Password">
+        <label for="floatingPassword">Repita contraseña</label>
+      </div>
+      <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('email')?.touched)">
+        <div *ngIf="registerForm.get('password')?.errors?.['required']">La contraseña es requerida.
+      </div>
+      </div>
+
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Recuérdame
+      </label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary mb-3" type="submit" [disabled]="!registerForm.valid">Registrarme</button>
+    
+
+    <p class="mt-5 mb-3 text-muted">&copy; 2023–2024</p>
+  </form>
+</main>
