@@ -41,8 +41,7 @@ export class LoginComponent implements OnInit  {
   
   constructor(private router:Router,
               private spinner:SpinnerService,
-              private _users:UserService,
-              public _toast:ToastService) { 
+              private _users:UserService) { 
     this.newUser=false;
   }
 
@@ -104,18 +103,6 @@ export class LoginComponent implements OnInit  {
     } else {
       console.log('Formulario inválido');
     }
-  }
-
-  showToast()
-  {
-    this._toast.hiddenToast=false;
-    this._toast.showSuccessToast("titulo","contenido");
-    setTimeout(() => {
-      this._toast.hiddenToast=true;
-    }, 3000);
-    
-    
-   
   }
 
 }

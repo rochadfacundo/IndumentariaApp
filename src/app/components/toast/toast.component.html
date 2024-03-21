@@ -1,0 +1,11 @@
+
+<div class="flex justify-content-center">
+  <p-toast  [showTransformOptions]="'translateY(100%)'"
+            [hidden]="this._toast.hiddenToast" 
+           [position]="'top-center'" 
+           [showTransitionOptions]="'2000ms'" 
+           [hideTransitionOptions]="'4000ms'" 
+           [showTransformOptions]="'translateX(100%)'"
+           (onClose)="this._toast.HandleCloseEvent($event)"></p-toast>
+           <button type="button" (click)="showToast()" label="Show">boton</button>
+</div>

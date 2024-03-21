@@ -28,7 +28,7 @@ constructor(private router:Router)
   
 }
 
-ngOnInit() {
+ngOnInit(){
     this.goToLogin();
 }
 

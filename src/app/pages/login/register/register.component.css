@@ -1,0 +1,4 @@
+.form-container {
+    width: 100%; /* Ancho máximo */
+    max-width: 800px; /* Ancho máximo deseado */
+  }
