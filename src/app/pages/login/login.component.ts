@@ -19,14 +19,12 @@ import { ToastService } from '../../services/toast.service';
   imports: [HttpClientModule,
             ReactiveFormsModule,
             CommonModule,
-            NgxSpinnerModule,
             RegisterComponent,
             ToastModule
           ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
   providers:[
-    {provide:HTTP_INTERCEPTORS,useClass:InterceptorService,multi:true},
   ]
 })
 export class LoginComponent implements OnInit  {
@@ -40,7 +38,6 @@ export class LoginComponent implements OnInit  {
   @Input() newUser:boolean;
   
   constructor(private router:Router,
-              private spinner:SpinnerService,
               private _users:UserService) { 
     this.newUser=false;
   }
@@ -51,6 +48,7 @@ export class LoginComponent implements OnInit  {
   }
 
   ngOnInit(): void {
+    
     this._users.getListUsers().subscribe((data)=>{
 
       this.listUsers=data;

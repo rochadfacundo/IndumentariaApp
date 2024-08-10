@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace BackendIndumentaria.Models
 {
@@ -61,16 +61,16 @@ namespace BackendIndumentaria.Models
               .IsUnicode(false)
               .HasColumnName("password");
                 entity.Property(e => e.Path)
-              .HasMaxLength(500)
               .IsUnicode(false)
               .HasColumnName("path");
                entity.Property(e => e.typeOfUser)
             .HasMaxLength(10)
             .IsUnicode(false)
             .HasColumnName("user");
+
             });
 
-            OnModelCreatingPartial(modelBuilder);
+            this.OnModelCreatingPartial(modelBuilder);
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);

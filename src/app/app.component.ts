@@ -34,6 +34,7 @@ ngOnInit(){
 
 goToLogin()
 {
+
   this.router.navigateByUrl("pages/login");
 }
 

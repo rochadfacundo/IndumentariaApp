@@ -11,8 +11,10 @@ export class AppindumentariaService {
   endPoint:string="https://www.indumentaria-api.somee.com/api/";
   apiUrl:string="Indumentaria/";
 
-  constructor(private http: HttpClient) { 
+
+  constructor(private http: HttpClient) {
     this.apiUrl=this.endPoint+this.apiUrl;
+    this.apiUrl=  "https://localhost:7027/api/Indumentaria/";
 
   }
 
@@ -31,7 +33,7 @@ export class AppindumentariaService {
     return this.http.post<Producto>(this.apiUrl+'EditProducto',request);
   }
 
-  
+
 
   deleteProducto(id:number):Observable<void>
   {

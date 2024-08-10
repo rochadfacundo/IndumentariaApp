@@ -1,4 +1,4 @@
-
+<app-toast></app-toast>
 <main class="form-container form-signin d-flex justify-content-center align-items-center" [formGroup]="this.registerForm" (ngSubmit)="onSubmit()" style="background-color: rgb(204, 194, 194);">
   <form class="w-100 max-width-form">
 
@@ -10,7 +10,7 @@
     <div class="row"> 
       <div class="col-6">
         <div class="form-floating">
-          <input type="text" class="form-control" formControlName="name" placeholder="name@example.com">
+          <input type="text" class="form-control" formControlName="name">
           <label for="floatingInput">Ingrese nombre</label>
         </div>
 
@@ -25,7 +25,7 @@
     <!-- APELLIDO -->
       <div class="col-6">
         <div class="form-floating">
-          <input type="text" class="form-control" formControlName="surName" placeholder="name@example.com">
+          <input type="text" class="form-control" formControlName="surName" >
           <label for="floatingInput">Ingrese apellido</label>
         </div>
 
@@ -108,14 +108,14 @@
 
       <div class="col-6">
         <div class="form-floating">
-        <input type="file" id="path" formControlName="path" placeholder="Subir foto" accept="image/*">
+        <input type="file" id="path" (change)="onFileChange($event)" placeholder="Subir foto" accept="image/*">
         <label for="floatingInput">Ingrese foto</label>
       </div>
       </div>
     <!-- EMAIL -->
     <div class="col-6">
       <div class="form-floating">
-        <input type="email" class="form-control" formControlName="email" placeholder="name@example.com">
+        <input type="email" class="form-control" formControlName="email" >
         <label for="floatingInput">Ingrese email</label>
       </div>
 
@@ -149,7 +149,7 @@
         <!-- REPETIR CONTRASEÑA -->
           <div class="col-6">
             <div class="form-floating">
-              <input type="text" class="form-control" formControlName="password2" placeholder="name@example.com">
+              <input type="password" class="form-control" formControlName="password2">
               <label for="floatingInput">Repita contraseña</label>
             </div>
     

@@ -1,0 +1,23 @@
+<span class="title">Listado de productos</span>
+<table class="table table-dark table-striped-columns">
+    <thead>
+      <tr>
+        <th scope="col">Producto</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Foto</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of this.listProductos">
+        <td>{{ producto.nombre }}</td>
+        <td>{{ producto.precio }}</td>
+        <td> <img [src]="producto.path" alt=""></td>
+        <td><i class="icons fa-solid fa-pen-to-square text-warning"></i></td>
+        <td><i class="icons fa-solid fa-trash text-danger"> </i></td>
+
+
+      </tr>
+    </tbody>
+</table>

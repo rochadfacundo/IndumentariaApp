@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ToastModule } from 'primeng/toast';
 import { ToastService } from '../../services/toast.service';
 
@@ -17,15 +17,7 @@ export class ToastComponent {
   }
 
     
-  showToast()
-  {
-    this._toast.hiddenToast=false;
-    this._toast.showSuccessToast("titulo","contenido");
-    setTimeout(() => {
-      this._toast.hiddenToast=true;
-    }, 3000);
-  
-  }
+
 
 
 }

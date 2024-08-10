@@ -1,0 +1,14 @@
+<form [formGroup]="this.formProducto">
+  <div class="input-group mb-3">
+      <input type="text" placeholder="Ingresar producto" class="form-control" formControlName="nombre">
+  </div>
+  <div class="input-group mt-2">
+      <input type="number" placeholder="Ingresar precio" class="form-control" formControlName="precio">
+  </div>
+  <div class="input-group mt-2">
+      <input type="file" accept="image/*" (change)="onFileSelected($event)" class="form-control" formControlName="imagen">
+  </div>
+  <div class="d-grid gap-2 mt-3">
+      <button class="btn btn-primary" (click)="this.addProducto()" type="button" [disabled]="!this.formProducto.valid">Agregar Producto</button>
+  </div>
+</form>

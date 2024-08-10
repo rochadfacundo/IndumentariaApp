@@ -36,6 +36,7 @@ export class ToastService {
   }
   showErrorToast(title:string,content:string)
   {
+ 
     this.showToast('error',title,content);
   }
   showInfoToast(title:string,content:string)

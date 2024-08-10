@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ps5oZK5ziiBaDnm5iu+ULOxLJ5HYo1Kq9Eu86mEYkXOnsLRHTEnDWDd3czHVo5m2g7ZJ7uXl3UOoPY1iXBxaZA==",
+  "dgSpecHash": "0mccj2lZYPXmYlNDNoKwODQFMycQ6Ndyewi4tAjJANkS2/lCCl5quDNComL47FAb/nVGdO4oslvd7i7HuA16LA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC\\Documents\\Proyectos\\Indumentaria App\\backendIndumentaria\\BackendIndumentaria\\BackendIndumentaria.csproj",
+  "projectFilePath": "C:\\Users\\PC\\Documents\\Proyectos\\Indumentaria App\\IndumentariaApp\\BackendIndumentaria\\BackendIndumentaria\\BackendIndumentaria.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PC\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\PC\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",

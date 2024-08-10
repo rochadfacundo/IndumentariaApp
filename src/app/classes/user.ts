@@ -23,7 +23,7 @@ export class User {
         this.user=EUser.Invitado;
         this.email="";
         this.password="";
-        this.path="";
+        this.path= "";
         this.dni="";
         this.name="";
         this.surName="";

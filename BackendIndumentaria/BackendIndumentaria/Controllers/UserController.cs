@@ -1,4 +1,4 @@
-﻿using BackendIndumentaria.Models;
+using BackendIndumentaria.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,7 +27,6 @@ namespace BackendIndumentaria.Controllers
         {
             User user = await this._dbUser.Users.FindAsync(id);
 
-
             return Ok(user);
         }
 
@@ -35,6 +34,10 @@ namespace BackendIndumentaria.Controllers
         [Route("AddUser")]
         public async Task<IActionResult> addUser([FromBody] User request)
         {
+
+            Console.WriteLine(request);
+
+
             await this._dbUser.Users.AddAsync(request);
             await this._dbUser.SaveChangesAsync();
             return Ok(request);

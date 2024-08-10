@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\Documents\\Proyectos\\Indumentaria App\\backendIndumentaria\\BackendIndumentaria\\BackendIndumentaria.csproj": {}
+    "C:\\Users\\PC\\Documents\\Proyectos\\Indumentaria App\\IndumentariaApp\\BackendIndumentaria\\BackendIndumentaria\\BackendIndumentaria.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\Documents\\Proyectos\\Indumentaria App\\backendIndumentaria\\BackendIndumentaria\\BackendIndumentaria.csproj": {
+    "C:\\Users\\PC\\Documents\\Proyectos\\Indumentaria App\\IndumentariaApp\\BackendIndumentaria\\BackendIndumentaria\\BackendIndumentaria.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Documents\\Proyectos\\Indumentaria App\\backendIndumentaria\\BackendIndumentaria\\BackendIndumentaria.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Documents\\Proyectos\\Indumentaria App\\IndumentariaApp\\BackendIndumentaria\\BackendIndumentaria\\BackendIndumentaria.csproj",
         "projectName": "BackendIndumentaria",
-        "projectPath": "C:\\Users\\PC\\Documents\\Proyectos\\Indumentaria App\\backendIndumentaria\\BackendIndumentaria\\BackendIndumentaria.csproj",
+        "projectPath": "C:\\Users\\PC\\Documents\\Proyectos\\Indumentaria App\\IndumentariaApp\\BackendIndumentaria\\BackendIndumentaria\\BackendIndumentaria.csproj",
         "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Documents\\Proyectos\\Indumentaria App\\backendIndumentaria\\BackendIndumentaria\\obj\\",
+        "outputPath": "C:\\Users\\PC\\Documents\\Proyectos\\Indumentaria App\\IndumentariaApp\\BackendIndumentaria\\BackendIndumentaria\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",

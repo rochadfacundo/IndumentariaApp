@@ -9,10 +9,10 @@ import { User } from '../classes/user';
 })
 export class UserService {
 
-  apiUrl:string="https://www.indumentaria-api.somee.com/";
+  //apiUrl:string="https://www.indumentaria-api.somee.com/";
+  apiUrl:string="https://localhost:7027/";
 
-
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
     this.apiUrl=this.apiUrl;
 
   }
@@ -31,6 +31,7 @@ export class UserService {
 
   addUser(request:User):Observable<User>
   {
+    console.log(request);
     return this.http.post<User>(this.apiUrl+'AddUser',request);
   }
 
