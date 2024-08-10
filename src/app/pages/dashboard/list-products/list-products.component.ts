@@ -42,6 +42,7 @@ export class ListProductsComponent implements OnInit,OnDestroy{
     })
   }
 
+
   deleteProducto(producto:Producto)
   {
     this._indumentariaService.deleteProducto(producto.id).subscribe({
