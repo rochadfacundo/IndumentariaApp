@@ -15,7 +15,7 @@ export class ToastService {
     this.hiddenToast=false;
     this.messageService.add({
         severity: severity,
-        summary: title, 
+        summary: title,
         detail: content,
          });
   }
@@ -24,9 +24,9 @@ export class ToastService {
   {
     console.log($event);
     setTimeout(() => {
-    //  this.hiddenToast=true;
+      this.hiddenToast=true;
     }, 5000);
-   
+
   }
 
   showWarnToast(title:string,content:string)
@@ -36,7 +36,7 @@ export class ToastService {
   }
   showErrorToast(title:string,content:string)
   {
- 
+
     this.showToast('error',title,content);
   }
   showInfoToast(title:string,content:string)

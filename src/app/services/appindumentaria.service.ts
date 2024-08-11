@@ -23,19 +23,19 @@ export class AppindumentariaService {
     return this.http.get<Producto[]>(this.apiUrl+'GetProducto');
   }
 
-  addProducto(request:Producto):Observable<Producto>
+  addProduct(request:Producto):Observable<Producto>
   {
     return this.http.post<Producto>(this.apiUrl+'AddProducto',request);
   }
 
-  putProducto(request:Producto):Observable<Producto>
+  putProduct(request:Producto):Observable<Producto>
   {
-    return this.http.post<Producto>(this.apiUrl+'EditProducto',request);
+    return this.http.put<Producto>(this.apiUrl+'EditProducto',request);
   }
 
 
 
-  deleteProducto(id:number):Observable<void>
+  deleteProduct(id:number):Observable<void>
   {
     return this.http.delete<void>(this.apiUrl+'DeleteProducto/'+id);
   }

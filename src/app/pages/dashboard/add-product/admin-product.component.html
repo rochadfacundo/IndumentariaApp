@@ -1,0 +1,42 @@
+<form [formGroup]="this.formProduct" *ngIf="this.formAddProduct || this.formEditProduct || this.formDeleteProduct">
+
+  <span class="title"  *ngIf="this.formAddProduct">Agregar producto</span>
+  <span class="title"  *ngIf="this.formEditProduct">Modificar producto</span>
+  <span class="title"  *ngIf="this.formDeleteProduct">Eliminar producto</span>
+
+  <div class="input-group mb-3">
+      <input type="text" placeholder="Ingresar producto" class="form-control" formControlName="nombre">
+  </div>
+  <div class="input-group mt-2">
+      <input type="number" placeholder="Ingresar precio" class="form-control" formControlName="precio">
+  </div>
+  <div class="input-group mt-2">
+      <input type="file" accept="image/*" (change)="onFileSelected($event)" class="form-control" formControlName="path">
+  </div>
+  <div class="d-grid gap-2 mt-3" *ngIf="this.formAddProduct">
+      <button class="btn btn-primary" (click)="this.addProduct()" type="button" [disabled]="!this.formProduct.valid">Agregar Producto</button>
+  </div>
+  <div class="d-grid gap-2 mt-3" *ngIf="this.formEditProduct">
+
+    <button class="btn btn-primary" (click)="this.editProduct()" type="button" [disabled]="!this.formProduct.valid">Modificar Producto</button>
+  </div>
+
+  <div class="d-grid gap-2 mt-3" *ngIf="this.formDeleteProduct">
+
+    <button class="btn btn-primary" (click)="this.deleteProduct()" type="button">Está seguro que desea eliminar el producto?</button>
+  </div>
+
+  <div class="d-grid gap-2 mt-3">
+    <button class="btn btn-danger" (click)="this.goBack()" type="button">Volver</button>
+  </div>
+
+</form>
+
+
+<p-toast  [showTransformOptions]="'translateY(100%)'"
+[hidden]="this._toast.hiddenToast"
+[position]="'top-center'"
+[showTransitionOptions]="'2000ms'"
+[hideTransitionOptions]="'4000ms'"
+[showTransformOptions]="'translateX(100%)'"
+(onClose)="this._toast.HandleCloseEvent($event)"></p-toast>

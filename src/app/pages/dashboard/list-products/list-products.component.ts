@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppindumentariaService } from '../../../services/appindumentaria.service';
 import { Producto } from '../../../classes/producto';
@@ -15,11 +15,15 @@ import { Producto } from '../../../classes/producto';
 export class ListProductsComponent implements OnInit,OnDestroy{
 
   listProductos:Producto[]=[];
+  delete:boolean=false;
+
+  @Output() addProductEvent = new EventEmitter<boolean>();
+  @Output() editProductEvent = new EventEmitter<Producto>();
+  @Output() deleteProductEvent = new EventEmitter<Producto>();
+
   constructor(private _indumentariaService:AppindumentariaService
 
-  ){
-
-  }
+  ){}
 
   ngOnInit(): void {
 
@@ -39,20 +43,23 @@ export class ListProductsComponent implements OnInit,OnDestroy{
       },error:(error)=>{
         console.log(error);
       }
-    })
+    });
+  }
+
+  addProducto()
+  {
+    this.addProductEvent.emit(true);
+  }
+
+  updateProducto(product:Producto)
+  {
+    this.editProductEvent.emit(product);
   }
 
 
-  deleteProducto(producto:Producto)
+  deleteProducto(product:Producto)
   {
-    this._indumentariaService.deleteProducto(producto.id).subscribe({
-      next:(data)=>{
-       const newList= this.listProductos.filter(item=>item.id!=producto.id);
-       this.listProductos=newList;
-      },error:(error)=>{
-        console.log(error);
-      }
-    })
+    this.deleteProductEvent.emit(product);
   }
 
 }

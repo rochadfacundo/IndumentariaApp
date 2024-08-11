@@ -1,4 +1,7 @@
-<span class="title">Listado de productos</span>
+<div >
+
+  <span class="title">Listado de productos</span>
+
 <table class="table table-dark table-striped-columns">
     <thead>
       <tr>
@@ -14,10 +17,19 @@
         <td>{{ producto.nombre }}</td>
         <td>{{ producto.precio }}</td>
         <td> <img [src]="producto.path" alt=""></td>
-        <td><i class="icons fa-solid fa-pen-to-square text-warning"></i></td>
-        <td><i class="icons fa-solid fa-trash text-danger"> </i></td>
+        <td><i class="icons fa-solid fa-pen-to-square text-warning" (click)="this.updateProducto(producto)"></i></td>
+        <td><i class="icons fa-solid fa-trash text-danger" (click)="this.deleteProducto(producto)"> </i></td>
 
 
       </tr>
     </tbody>
 </table>
+
+  <div class="row">
+    <div class="col">
+      <button type="button" class="btn btn-success btn-block btn-lg"  (click)="this.addProducto()">Agregar producto</button>
+    </div>
+  </div>
+
+</div>
+

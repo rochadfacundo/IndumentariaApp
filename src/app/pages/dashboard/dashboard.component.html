@@ -5,9 +5,33 @@
 
               <div class="card-body p-4">
 
-                <app-add-product></app-add-product>
+                <app-list-products *ngIf="!this.formAddProduct && !this.formEditProduct && !this.formDeleteProduct"
+                                   (editProductEvent)="this.editProduct($event)"
+                                   (addProductEvent)="this.addProduct($event)"
+                                   (deleteProductEvent)="this.deleteProduct($event)"
+                ></app-list-products>
 
-                  <app-list-products></app-list-products>
+
+                <app-admin-product *ngIf="this.formEditProduct"
+                                 [formEditProduct]="this.formEditProduct"
+                                 [productToEdit]="this.productToEdit"
+                                 (cancelEvent)="this.cancel()"
+                 ></app-admin-product>
+
+
+                <app-admin-product *ngIf="this.formAddProduct"
+                                 [formAddProduct]="this.formAddProduct"
+                                 (cancelEvent)="this.cancel()"
+                ></app-admin-product>
+
+
+
+                <app-admin-product *ngIf="this.formDeleteProduct"
+                [formDeleteProduct]="this.formDeleteProduct"
+                [productToDelete]="this.productToDelete"
+                (cancelEvent)="this.cancel()"
+                ></app-admin-product>
+
 
               </div>
           </div>

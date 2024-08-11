@@ -20,6 +20,16 @@ body {
     font-style: normal;
 }
 
+button:active{
+  transform: scale(0.9);
+
+}
+
+i:active{
+  transform: scale(0.9);
+}
+
+
 .josefin{
   font-family: "Josefin Slab", serif;
   font-optical-sizing: auto;
@@ -27,6 +37,8 @@ body {
   font-style: normal;
   font-size: 1.1rem;
 }
+
+
 
 .title{
   font-size: 2rem;
