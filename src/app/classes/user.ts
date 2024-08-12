@@ -14,13 +14,13 @@ export class User {
     city:string;
     country:string;
     nacionality:string;
-    user:EUser;
+    role:EUser;
 
 
     constructor()
     {
         this.id=0;
-        this.user=EUser.Invitado;
+        this.role=EUser.Invitado;
         this.email="";
         this.password="";
         this.path= "";

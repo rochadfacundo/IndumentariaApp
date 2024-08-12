@@ -7,6 +7,9 @@ import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { ListProductsComponent } from './list-products/list-products.component';
 import { AdminProductComponent } from "./add-product/admin-product.component";
+import { EUser } from '../../enums/euser';
+import { UserService } from '../../services/user.service';
+import { User } from '../../classes/user';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,21 +20,39 @@ import { AdminProductComponent } from "./add-product/admin-product.component";
 })
 export class DashboardComponent implements OnInit{
 
+  roleFromLocalStorage!: EUser;
   emailFromLocalStorage: string|null=null;
   formEditProduct:boolean=false;
   formAddProduct:boolean=false;
   formDeleteProduct:boolean=false;
   productToEdit:Producto|null=null;
   productToDelete:Producto|null=null;
+  userLog:User;
 
-  constructor()
+  constructor(private _user:UserService)
   {
-
+    this.userLog=new User();
   }
 
   ngOnInit(): void {
     this.emailFromLocalStorage = localStorage.getItem('email');
+    this.roleFromLocalStorage= <EUser> localStorage.getItem('user');
+    this._user.getListUsers().subscribe((data)=>{
 
+      const user= data.filter((user)=>this.emailFromLocalStorage==user.email);
+
+      console.log(user);
+
+
+    });
+  }
+
+  isAdmin(): boolean {
+    return this.roleFromLocalStorage === EUser.Administrador;
+  }
+
+  isUser(): boolean {
+      return this.roleFromLocalStorage === EUser.Usuario;
   }
 
   editProduct(event:Producto)

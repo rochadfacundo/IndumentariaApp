@@ -36,9 +36,9 @@ export class LoginComponent implements OnInit  {
   toastEvent!:ToastCloseEvent;
 
   @Input() newUser:boolean;
-  
+
   constructor(private router:Router,
-              private _users:UserService) { 
+              private _users:UserService) {
     this.newUser=false;
   }
 
@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit  {
   }
 
   ngOnInit(): void {
-    
+
     this._users.getListUsers().subscribe((data)=>{
 
       this.listUsers=data;
@@ -65,7 +65,7 @@ export class LoginComponent implements OnInit  {
         email: new FormControl('', [Validators.required, Validators.email]),
         password: new FormControl('', Validators.required)
       });
-  
+
     }
 
   }
@@ -80,13 +80,17 @@ export class LoginComponent implements OnInit  {
     var password:string=this.loginForm.get('password')?.value;
     if (this.loginForm.valid) {
       // Guardar en localStorage
-    
+
       localStorage.setItem('email', email);
       localStorage.setItem('password',password);
 
 
-      var userLog=this.listUsers.filter((user)=>user.email==email&&user.password==password);
+      var userFilter=this.listUsers.filter((user)=>user.email==email&&user.password==password);
+
+      var userLog:User=userFilter[0];
+
       console.log(userLog);
+      localStorage.setItem('role', userLog.role);
       setTimeout(() => {
 
         if(userLog)
@@ -96,7 +100,7 @@ export class LoginComponent implements OnInit  {
 
       }, 3000);
 
-  
+
 
     } else {
       console.log('Formulario inválido');

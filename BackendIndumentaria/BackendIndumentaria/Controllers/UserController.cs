@@ -62,6 +62,7 @@ namespace BackendIndumentaria.Controllers
                     userItem.Email = user.Email;
                     userItem.Password = user.Password;
                     userItem.Path = user.Path;
+                    userItem.role = user.role;
 
 
                     await this._dbUser.SaveChangesAsync();

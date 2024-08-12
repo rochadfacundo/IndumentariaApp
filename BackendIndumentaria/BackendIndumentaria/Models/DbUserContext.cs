@@ -63,10 +63,10 @@ namespace BackendIndumentaria.Models
                 entity.Property(e => e.Path)
               .IsUnicode(false)
               .HasColumnName("path");
-               entity.Property(e => e.typeOfUser)
+               entity.Property(e => e.role)
             .HasMaxLength(10)
             .IsUnicode(false)
-            .HasColumnName("user");
+            .HasColumnName("role");
 
             });
 

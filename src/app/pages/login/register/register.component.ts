@@ -88,7 +88,7 @@ export class RegisterComponent {
       this.user.email=this.registerForm.get('email')?.value;
       this.user.password=this.registerForm.get('password')?.value;
       this.user.country=this.registerForm.get('country')?.value;
-      this.user.user=EUser.Usuario;
+      this.user.role=EUser.Usuario;
 
       const pass2=this.registerForm.get('password2')?.value;
 

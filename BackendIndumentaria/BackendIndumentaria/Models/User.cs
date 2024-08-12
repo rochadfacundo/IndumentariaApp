@@ -14,7 +14,7 @@ namespace BackendIndumentaria.Models
 
         public string? Country { get; set; }
 
-        public string? typeOfUser { get; set; }
+        public string? role { get; set; }
 
         public string? City { get; set; }
         public string? Email { get; set; }
