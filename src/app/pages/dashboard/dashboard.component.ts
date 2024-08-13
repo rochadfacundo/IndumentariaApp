@@ -10,11 +10,12 @@ import { AdminProductComponent } from "./add-product/admin-product.component";
 import { EUser } from '../../enums/euser';
 import { UserService } from '../../services/user.service';
 import { User } from '../../classes/user';
+import { SidebarComponent } from '../../components/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, ListProductsComponent, AdminProductComponent],
+  imports: [SidebarComponent,CommonModule, ReactiveFormsModule, ListProductsComponent, AdminProductComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })

@@ -47,7 +47,7 @@ ngOnInit(){
 goToLogin()
 {
 
-  this.router.navigateByUrl("pages/login");
+  this.router.navigateByUrl("pages/dashboard");
 }
 
 }
