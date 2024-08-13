@@ -1,0 +1,94 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+}
+
+.content-with-bg {
+  position:relative;
+  background-image: url('../../../assets/background6.jpg'); /* Ruta a la imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+.icon{
+  color: whitesmoke;
+  margin-right: 1rem;
+}
+.item{
+  margin-top: 2rem;
+  color: whitesmoke;
+}
+
+.profileImg{
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.content-with-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Sombra negra con 50% de opacidad */
+  z-index: -1;
+}
+
+.example-toolbar,.custom-sidenav,.navList{
+  background-color: rgb(65, 61, 65);
+  color: whitesmoke;
+  font-weight: bold;
+
+}
+
+.container {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+h1.example-app-name {
+  margin-left: 8px;
+}
+
+.example-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+.example-is-mobile .example-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+.custom-sidenav {
+  width: 250px; /* Ajusta este valor al tamaño que prefieras */
+  max-width: 100%;
+}
+
+@media(max-width: 600px) {
+  .custom-sidenav {
+    width: 250px; /* Puedes ajustar un ancho diferente para pantallas pequeñas si lo deseas */
+  }
+}
